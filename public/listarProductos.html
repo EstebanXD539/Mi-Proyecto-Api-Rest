@@ -1,47 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Lista de Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 40px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
         .tabla-contenedor {
             max-height: 400px;
             overflow-y: auto;
             border: 1px solid #ccc;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-
         th {
-            background-color: #007bff;
-            color: white;
             position: sticky;
             top: 0;
             z-index: 1;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
         }
 
         .volver {
@@ -62,24 +35,30 @@
     </style>
 </head>
 <body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Listado de Productos</h1>
 
-    <h1>Listado de Productos</h1>
-    <div class="tabla-contenedor">
-        <table id="productosTabla">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Descripción</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="tabla-contenedor mb-4">
+            <table id="productosTabla" class="table table-striped table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <a href="../menu.html" class="volver">← Volver al menú</a>
     </div>
 
-    <a href="../menu.html" class="volver">Volver al menú</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         async function cargarProductos() {
@@ -107,6 +86,5 @@
 
         cargarProductos();
     </script>
-
 </body>
 </html>
