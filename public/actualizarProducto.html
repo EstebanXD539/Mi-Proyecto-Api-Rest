@@ -4,6 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Actualizar Producto</title>
+    <style>
+        .boton-volver {
+            background-color: #28a745; /* Verde */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .boton-volver:hover {
+            background-color: #218838; /* Verde más oscuro */
+        }
+    </style>
 </head>
 
 <body>
@@ -31,6 +49,8 @@
             <button type="button" onclick="actualizarProducto()">Actualizar</button>
         </form>
     </div>
+
+    <a href="../menu.html" class="boton-volver">← Volver al Menú</a>
 
     <script src="./actualizarProducto.js"> </script>
 </body>

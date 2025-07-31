@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Eliminar Producto</title>
+    <style>
+        .boton-volver {
+            background-color: #28a745; /* Verde */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .boton-volver:hover {
+            background-color: #218838; /* Verde más oscuro */
+        }
+    </style>
 </head>
 <body>
     <h2>Buscar y Eliminar Producto</h2>
@@ -22,6 +40,8 @@
         <button type="button" onclick="eliminarProducto()">Eliminar</button>
     </div>
 
-    <script src="./buscarYEliminar.js"></script>
+    <a href="../menu.html" class="boton-volver">← Volver al Menú</a>
+
+    <script src="/controllers/eliminarProducto.js"></script>
 </body>
 </html>
