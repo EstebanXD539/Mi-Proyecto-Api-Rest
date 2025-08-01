@@ -55,3 +55,29 @@ app.delete('/api/productos/:id', (req, res) => {
   });
 });
 
+// Ruta de login con validacion de hash
+app.post('/api/login', (req, res) => {
+  const { username, password } = req.body;
+  const sql = 'SELECT * FROM usuarios WHERE username = ?';
+  
+  db.query(sql, [username], async (err, results) => {
+    if (err) {
+      console.error('Error en el login:', err);
+      return res.status(500).send('Error del servidor');
+    }
+
+    if (results.length === 0) {
+      return res.status(401).json({ success: false, message: 'Usuario no encontrado'});
+    }
+
+    const usuario = results[0];
+    const contraseniaValida = await bcrypt.compare(password, usuario.password);
+
+    if (contraseniaValida) {
+      res.json({ success: true, token: 'token123', username});
+    } else {
+      res.status(401).json({ success: false, message: 'Contraseña incorrecta' });
+    }
+  });
+});
+
