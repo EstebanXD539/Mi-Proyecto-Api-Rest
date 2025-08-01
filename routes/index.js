@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('../models/db');
 const app = express();
+const bcrypt = require('bcrypt');
 const port = 3000;
 
 app.use(cors());
